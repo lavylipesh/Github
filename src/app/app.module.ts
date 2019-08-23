@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { GithubNavbarComponent } from './github-navbar/github-navbar.component';
+import { SearchComponent } from './search/search.component';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
-    GithubNavbarComponent
+    GithubNavbarComponent,
+    SearchComponent,
+    SearchFormComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
