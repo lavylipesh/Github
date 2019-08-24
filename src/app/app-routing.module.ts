@@ -7,8 +7,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {path:'github',component:GithubComponent},
   {path:'search',component:SearchComponent},
-  { path:'**', component:NotFoundComponent},
   { path: '', redirectTo:"/github", pathMatch:"full"},
+  { path:'**', component:NotFoundComponent},
+ 
 ];
 
 
