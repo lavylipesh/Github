@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'github',component:GithubComponent},
   {path:'search',component:SearchComponent},
   { path:'**', component:NotFoundComponent},
+  { path: '', redirectTo:"/github", pathMatch:"full"},
 ];
 
 

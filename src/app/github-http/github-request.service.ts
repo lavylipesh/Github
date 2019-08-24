@@ -14,8 +14,8 @@ export class GithubRequestService {
     interface Results{
       data:[];
     } 
-  
-    let searchEndpoint= "https://api.github.com/users/search?api_key=" + environment.GithubUrl;
+    
+    let searchEndpoint= "https://api.github.com/users/search?access_token=" + environment.GithubUrl;
 
     let promise =  new Promise((resolve, reject)=>{
         this.http.get<Results>(searchEndpoint+"&q="+search).toPromise().then(
