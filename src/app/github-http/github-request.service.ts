@@ -8,7 +8,8 @@ import {Github} from '../github';
 })
 export class GithubRequestService {
   users:Github[]=[];
-  
+  constructor(private http:HttpClient) { }
+
   searchGithub(search:string){
     interface Results{
       data:[];
