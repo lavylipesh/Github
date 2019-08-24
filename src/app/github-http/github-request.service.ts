@@ -17,4 +17,24 @@ export class GithubRequestService {
     
     let searchEndpoint= "https://api.github.com/users/search?access_token=" + environment.GithubUrl;
 
-    zjhsuhu
+    let promise =  new Promise((resolve, reject)=>{
+      this.http.get<Results>(searchEndpoint+"&q="+search).toPromise().then(
+
+        (results)=>{
+          this.users=[];
+          for(let i=0; i<results["data"].length; i++){
+            this.users.push(new Github());
+            
+          }
+          console.log(this.users);
+          resolve()
+        },
+        (error)=>{
+          console.log(error)
+          reject()
+        }
+      )
+  })
+  return promise;
+}
+}
