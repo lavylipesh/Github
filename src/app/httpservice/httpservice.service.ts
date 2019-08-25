@@ -40,6 +40,7 @@ export class HttpserviceService {
   searchRepository(name:string){
     interface repos{
       name:string;
+      description:string;
       full_name:string;
       html_url:any;
     }
