@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Github } from '../github';
 import { HttpClient } from '@angular/common/http';
-
+import {Repositories} from '../repositories'
 
 
 @Injectable({
@@ -9,8 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpserviceService {
   userProfile: Github;
+  userRepo:Repositories;
 
   constructor(private lipesh:HttpClient) {  }
+  
 
   searchUser(name:string){
     interface person{
@@ -32,9 +34,15 @@ export class HttpserviceService {
         },
         (error)=>{
           console.log(error);
-        }
-      )
+        })
     })
   }
+  searchRepository(name:string){
+    interface repos{
+      
+    }
+  }
+  
+
 
 }

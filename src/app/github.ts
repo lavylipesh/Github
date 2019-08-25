@@ -1,5 +1,5 @@
 export class Github {
-    name:any;
+    name:string;
     login: any;
     location:any;
     followers:any;
