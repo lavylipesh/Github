@@ -11,15 +11,21 @@
           </div>
     </div>
     <div>
-            <form id="lipesh">
-            <img src="{{user.avatar_url}}" class="rounded" >
+            <form id="lipesh" >
+            <img src="{{user.avatar_url}}" class="rounded-circle" >
             <h1>Name:{{user.name}}</h1>
             <h2>Location:{{user.location}}</h2>
             <h3>Followers:{{user.followers}}</h3>
             <h4>Following:{{user.following}}</h4>
             <h5>Repos:{{user.public_repos}}</h5>
+            
             </form>
        </div>
+       <img src="{{user.html_url}}">
+         <h1>{{public_repos.name}}</h1>
+         <h2>{{public_repos.description}}</h2>
+         <h3>{{user.full_name}}</h3>
+
 
 
 </div>

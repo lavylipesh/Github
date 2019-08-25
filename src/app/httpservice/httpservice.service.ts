@@ -39,8 +39,22 @@ export class HttpserviceService {
   }
   searchRepository(name:string){
     interface repos{
-      
+      name:string;
+      full_name:string;
+      html_url:any;
     }
+    return new Promise((resolve, reject)=>{
+      this.lipesh.get<repos>('https://api.github.com/users/lavylipesh/repos?access_token=b5e8cd8a999c688a5b3ff4b70f6b122c04e76263').toPromise().then(
+        (result)=>{
+          console.log(result)
+          this.userRepo = result;
+          resolve();
+        },
+        (error)=>{
+          console.log(error);
+        })
+    })
+    
   }
   
 
