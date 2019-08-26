@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Github } from '../github';
 import { HttpserviceService } from '../httpservice/httpservice.service';
-import { Repositories} from '../repositories';
+import {Repositories} from '../repositories';
 
 
 @Component({

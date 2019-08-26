@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Github } from '../github';
 import { HttpClient } from '@angular/common/http';
-import {Repositories} from '../repositories'
+import {Repositories} from '../repositories';
+import {environment} from '../../environments/environment';
 
 
 @Injectable({
@@ -26,7 +27,7 @@ export class HttpserviceService {
       public_repos:any;
     }
     return new Promise((resolve, reject)=>{
-      this.lipesh.get<person>('https://api.github.com/users/lavylipesh?access_token=b5e8cd8a999c688a5b3ff4b70f6b122c04e76263').toPromise().then(
+      this.lipesh.get<person>("https://api.github.com/users/"+this.userProfile+"?access_token="+ environment.GithubUrl).toPromise().then(
         (result)=>{
           console.log(result)
           this.userProfile = result;
@@ -45,10 +46,11 @@ export class HttpserviceService {
       html_url:any;
     }
     return new Promise((resolve, reject)=>{
-      this.lipesh.get<repos>('https://api.github.com/users/lavylipesh/repos?access_token=b5e8cd8a999c688a5b3ff4b70f6b122c04e76263').toPromise().then(
-        (result)=>{
-          console.log(result)
-          this.userRepo = result;
+      this.lipesh.get<repos>("https://api.github.com/users/"+this.searchRepository+"?access_token="+environment.GithubUrl).toPromise().then(
+        
+        (success)=>{
+          console.log(success)
+          this.userRepo = success;
           resolve();
         },
         (error)=>{
