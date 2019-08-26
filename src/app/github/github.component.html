@@ -15,17 +15,15 @@
             <h3>Followers:{{user.followers}}</h3>
             <h4>Following:{{user.following}}</h4>
             <h5>Repos:{{user.public_repos}}</h5>
-            <img src="{{repositories.html_url}}" class="rounded-circle">
-         <h1>{{repositoris.name}}</h1>
-         <h2>{{repositoris.description}}</h2>
-         <h3>{{repositories.full_name}}</h3>
-
+            
        </div>
        
        <div class="card-columns">
            <div *ngFor="let rp of repo">
                <div class="card">
                    <h1>{{rp.name}}</h1>
+                   <h2>{{rp.full_name}}</h2>
+                   <h3>{{rp.description}}</h3>
                </div>
            </div>
        </div>

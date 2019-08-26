@@ -64,7 +64,7 @@ export class HttpserviceService {
     interface Myrepo {
       id: string;
       name: string;
-      // tslint:disable-next-line:variable-name
+    // tslint:disable-next-line:variable-name
       html_url: string;
       description: string;
     }
