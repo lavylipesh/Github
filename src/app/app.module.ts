@@ -10,6 +10,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GithubFormComponent } from './github-form/github-form.component';
 import { ReposComponent } from './repos/repos.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ReposComponent } from './repos/repos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

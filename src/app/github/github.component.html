@@ -3,15 +3,12 @@
     <div style="margin: 20px">
         <div class="card">
             <div class="card-body">
-                <form class="form-inline">
-                    <input type="text" class="form-control mr-10" placeholder="Search" name="name" >
-                    <button type="submit" class="btn btn-dark" >Search</button>
-                </form>
+                <input type="text" class="form-control bg-transparent" placeholder="Search here" aria-label="user" aria-describedby="basic-addon2" name="name" [(ngModel)]="name">
+                    <button type="submit" class="btn btn-dark" (click)="findUser(name)" >Search</button>
                </div>
           </div>
     </div>
     <div>
-            <form id="lipesh" >
             <img src="{{user.avatar_url}}" class="rounded-circle" >
             <h1>Name:{{user.name}}</h1>
             <h2>Location:{{user.location}}</h2>
@@ -23,10 +20,14 @@
          <h2>{{repositoris.description}}</h2>
          <h3>{{repositories.full_name}}</h3>
 
-
-            
-            </form>
        </div>
        
+       <div class="card-columns">
+           <div *ngFor="let rp of repo">
+               <div class="card">
+                   <h1>{{rp.name}}</h1>
+               </div>
+           </div>
+       </div>
 
 </div>

@@ -10,6 +10,7 @@ import {environment} from '../../environments/environment';
 })
 export class HttpserviceService {
   userProfile: Github;
+  apitoken = '?access_token=' + environment.GithubUrl;
   userRepo:Repositories;
 
   constructor(private lipesh:HttpClient) {  }
@@ -23,11 +24,11 @@ export class HttpserviceService {
       location:any;
       followers:any;
       following:any;
-      avatar_url:any;
+      avatar_url:any; 
       public_repos:any;
     }
     return new Promise((resolve, reject)=>{
-      this.lipesh.get<person>("https://api.github.com/users/"+this.userProfile+"?access_token="+ environment.GithubUrl).toPromise().then(
+      this.lipesh.get<person>("https://api.github.com/users/"+ name +"?access_token="+ environment.GithubUrl).toPromise().then(
         (result)=>{
           console.log(result)
           this.userProfile = result;
@@ -46,7 +47,7 @@ export class HttpserviceService {
       html_url:any;
     }
     return new Promise((resolve, reject)=>{
-      this.lipesh.get<repos>("https://api.github.com/users/"+this.searchRepository+"?access_token="+environment.GithubUrl).toPromise().then(
+      this.lipesh.get<repos>("https://api.github.com/users/"+ name +"/repos?access_token="+environment.GithubUrl).toPromise().then(
         
         (success)=>{
           console.log(success)
@@ -59,7 +60,28 @@ export class HttpserviceService {
     })
     
   }
-  
+  getRepo(name: string){
+    interface Myrepo {
+      id: string;
+      name: string;
+      // tslint:disable-next-line:variable-name
+      html_url: string;
+      description: string;
+    }
+    return new Promise((resolve, reject) => {
+      this.lipesh.get<Myrepo>("https://api.github.com/users/" + name + '/repos?' + this.apitoken).toPromise().then(
+        (result) => {
+          this.userRepo = result;
+          console.log(this.userRepo)
+          resolve();
+        },
+        (error) => {
+          reject();
+        }
+      );
+    });
+
+  }
 
 
 }
