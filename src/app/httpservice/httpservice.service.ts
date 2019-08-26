@@ -49,7 +49,7 @@ export class HttpserviceService {
       description: string;
     }
     return new Promise((resolve, reject) => {
-      this.lipesh.get<Myrepo>("https://api.github.com/users/" + name + '/repos?' + this.apitoken).toPromise().then(
+      this.lipesh.get<Myrepo>("https://api.github.com/users/" + name + '/repos?' + environment.GithubUrl).toPromise().then(
         (result) => {
           this.userRepo = result;
           console.log(this.userRepo)
