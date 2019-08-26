@@ -10,7 +10,7 @@ import {environment} from '../../environments/environment';
 })
 export class HttpserviceService {
   userProfile: Github;
-  apitoken = '?access_token=' + environment.GithubUrl;
+  GithubUrl = '?access_token=' + environment.GithubUrl;
   userRepo:Repositories;
 
   constructor(private lipesh:HttpClient) {  }
