@@ -9,23 +9,27 @@
           </div>
     </div>
     <div>
+        <div class="card-columns">
             <img src="{{user.avatar_url}}" class="rounded-circle" >
             <h1>Name:{{user.name}}</h1>
-            <h2>Location:{{user.location}}</h2>
-            <h3>Followers:{{user.followers}}</h3>
-            <h4>Following:{{user.following}}</h4>
-            <h5>Repos:{{user.public_repos}}</h5>
+            <h1>Location:{{user.location}}</h1>
+            <h1>Followers:{{user.followers}}</h1>
+            <h1>Following:{{user.following}}</h1>
+            <h1>Repos:{{user.public_repos}}</h1>
+            </div>
             
        </div>
+       <div id="pesh">
        
-       <div class="card-columns">
+       <div class="card-columns" id="lavy">
            <div *ngFor="let rp of repo">
                <div class="card">
-                   <h1>{{rp.name}}</h1>
+                   <h1><strong>{{rp.name}}</strong></h1>
                    <h2>{{rp.full_name}}</h2>
                    <h3>{{rp.description}}</h3>
                </div>
            </div>
+       </div>
        </div>
 
 </div>

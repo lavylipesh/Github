@@ -39,27 +39,7 @@ export class HttpserviceService {
         })
     })
   }
-  searchRepository(name:string){
-    interface repos{
-      name:string;
-      description:string;
-      full_name:string;
-      html_url:any;
-    }
-    return new Promise((resolve, reject)=>{
-      this.lipesh.get<repos>("https://api.github.com/users/"+ name +"/repos?access_token="+environment.GithubUrl).toPromise().then(
-        
-        (success)=>{
-          console.log(success)
-          this.userRepo = success;
-          resolve();
-        },
-        (error)=>{
-          console.log(error);
-        })
-    })
-    
-  }
+  
   getRepo(name: string){
     interface Myrepo {
       id: string;
