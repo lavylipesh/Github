@@ -8,37 +8,37 @@ import {Repositories} from '../repositories';
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.css']
 })
-//export class GithubComponent implements OnInit {
-  //user: Github;
-  //name:string;
-  //repo: Repositories;
+export class GithubComponent implements OnInit {
+  user: Github;
+  name:string;
+  repo: Repositories;
   
-  //constructor( private httpservice:HttpserviceService) { }
+  constructor( private httpservice:HttpserviceService) { }
 
 
-  //findUser(name){
-    //this.httpservice.searchUser(this.name).then(
-      //(result)=>{
-        //this.user = this.httpservice.userProfile
-        //console.log(this.user);
-     // },
-      //(error)=>{
-       // console.log(error);
-      //}
-    //)
-    //this.httpservice.getRepo(name).then(
-      //(success)=>{
-        //this.repo = this.httpservice.userRepo; 
-        //console.log(this.repo);
-      //},
-      //(error)=>{
+  findUser(name){
+    this.httpservice.searchUser(this.name).then(
+      (result)=>{
+        this.user = this.httpservice.userProfile
+        console.log(this.user);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+    this.httpservice.getRepo(name).then(
+      (success)=>{
+        this.repo = this.httpservice.userRepo; 
+        console.log(this.repo);
+      },
+      (error)=>{
 
       }
-    //)
+    )
   }
 
-  //ngOnInit() {
-    //this.findUser('lavylipesh');
-     //}
+  ngOnInit() {
+    this.findUser('lavylipesh');
+     }
 
-//}
+}
