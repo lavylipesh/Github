@@ -1,6 +1,34 @@
-# Github
+
+
+## Github
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+
+## Author
+Lilibeth Langat
+## Description
+This is an A ngular CLI project that allows the user to input their github user name and get their repositories.A user can also serrach for other github users to view their repositories.
+
+## Technologies used
+HTML
+CSS
+Bootstrap
+Angular CLI
+## Istallation/Setup-Instructions
+open terminal[Ctrl+Alt+T]
+git clone https://github.com/lavylipesh/Github/
+code . or atom . depending on the text editor you have
+
+## Live page 
+You can view my page at https://github.io/lavylipesh/Github/
+## Known bugs
+I had trouble using httpClient
+## Licence and Copyright  Information
+ MIT licence @ Lilibeth
+## Contact Information
+You may contact me at lilibethlangat@yahoo.com for more nformation on my projects.
+
+
 
 ## Development server
 
